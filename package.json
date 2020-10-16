@@ -1,0 +1,23 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.1",
+    "bootstrap-icons": "^1.0.0-alpha5",
+    "formbouncerjs": "^1.4.6",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "select2": "^4.0.13",
+    "sweetalert2": "^9.17.1"
+  }
+}

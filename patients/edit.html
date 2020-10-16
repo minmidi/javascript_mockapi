@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients-edit</title>
+
+    <!-- CSS Library Bootstrap And Custom CSS  -->
+    <link rel="stylesheet" href="../scss/main.css">
+    <!-- CSS Layout  -->
+    <link rel="stylesheet" href="../scss/layout.css">
+
+    <!-- Font Anwesome JS -->
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+
+</head>
+<body onload="SystemCore.getDataPatient()">
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="pull-left image">
+                    <img src="../images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+
+                <div class="pull-left info">
+                    <p>admin</p>
+                    <a href="#"><i class="fa fa-circle text-success fa-xs"></i> Online</a>
+        </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="../index.html"> <i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li class="active">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fas fa-hospital"></i> Bệnh viện</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Thêm bệnh viện</a>
+                        </li>
+                        <li>
+                            <a href="index.html">Danh sách bệnh viện</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item"  id= "hospitalInfo">
+                                <!-- code -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Add Form Here -->
+            <form id="edit-hospital-form">
+                <div class="form-group">
+                    <label for="hotel">Bệnh viện</label>
+                    <select name="hospitalId" id="hospitalId" class="form-control">
+                        <!-- code here -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Hình ảnh</label>
+                  <input type="images" class="form-control" id="images" name="images" placeholder="Nhập đường đẫn hình ảnh" data-rule="required|minlength-5|checkImgUrl-jpg-png-gif">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Tên bệnh nhân</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên bệnh nhân" data-rule="required|minlength-5">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Tuổi bệnh nhân</label>
+                    <input type="logo" class="form-control" id="age" name="age" placeholder="Nhập tuổi bệnh nhân" data-rule="required|minlength-1|integer|checkNumber">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="bed_no">Số giường</label>
+                    <input type="text" class="form-control" id="bed_no" name="bed_no" placeholder="Nhập số giường bệnh nhân" data-rule="required|minlength-1|integer|checkNumber">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description">Hồ sơ bệnh án</label>
+                    <textarea class="form-control" id="description" name="description" placeholder="Nhập ghi chú bệnh án" rows="5" data-rule="required|minlength-5"></textarea>
+                  </div>
+                   
+               
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+              </form>
+            <!-- Add Form End -->
+
+        </div>
+    </div>
+    
+
+
+    <!-- jQuery JS -->
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Axios JS -->
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <!-- Sweetalert2 JS -->
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <!-- Layout JS -->
+    <script src="../js/layout.js"></script>
+    <!-- Code backend JS -->
+    <script src="../js/hospital.js"></script>
+    <!-- Validate JS -->
+    <script src="../js/js-form-validator.min.js"></script>
+    <!-- Code backend JS -->
+    <script src="../js/patients.js"></script>
+
+    <!-- Script JS -->
+    <script>
+        // SideBar Layout
+        LayoutCore.sideBar();
+
+        // Thông tin bệnh viện
+       SystemCore.hospitalInfo();
+
+       // Validate Form
+       SystemCore.validateFormEdit();
+
+       // Lấy thông tin bệnh viện
+       SystemCore.getDataSelect()
+
+       // Chặn không cho gửi form lên
+       $('#add-hospital-form').on('submit', function(e) {
+        e.preventDefault(); // Now nothing will happen
+        });
+        
+    </script>
+
+</body>
+</html>

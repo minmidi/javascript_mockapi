@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+
+    <!-- CSS Library Bootstrap And Custom CSS  -->
+    <link rel="stylesheet" href="../scss/main.css">
+    <!-- CSS Layout  -->
+    <link rel="stylesheet" href="../scss/layout.css">
+
+    <!-- Font Anwesome JS -->
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="pull-left image">
+                    <img src="../images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+
+                <div class="pull-left info">
+                    <p>admin</p>
+                    <a href="#"><i class="fa fa-circle text-success fa-xs"></i> Online</a>
+        </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="../index.html"> <i class="fas fa-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fas fa-hospital"></i> Bệnh viện</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="../hospital/add.html">Thêm bệnh viện</a>
+                        </li>
+                        <li>
+                            <a href="../hospital/index.html">Danh sách bệnh viện</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" id= "hospitalInfo">
+                                <a class="nav-link" href="../hospital/index.html">Trang chủ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div>
+                <h2>Chào mừng bạn đến với trang quản lý bệnh viện</h2>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+
+
+    <!-- jQuery JS -->
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Axios JS -->
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <!-- Sweetalert2 JS -->
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <!-- Layout JS -->
+    <script src="../js/layout.js"></script>
+    <!-- Code backend JS -->
+    <script src="../js/patients.js"></script>
+
+    <!-- Script JS -->
+    <script>
+        // SideBar Layout
+        LayoutCore.sideBar();
+
+    </script>
+</body>
+</html>
